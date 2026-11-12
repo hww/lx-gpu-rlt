@@ -24,7 +24,10 @@ module regfile (
         end
     end
 
-    // write-first: если we и ra==wa, читаем новое значение
+    // Read-first: reads return the stored value; a write lands on the next
+    // clock. The current design never writes and reads the same register in
+    // the same cycle (no pipeline), so write-first vs read-first doesn't
+    // matter yet; it will if a pipeline is added.
     assign rdata_a = mem[ra];
     assign rdata_b = mem[rb];
 

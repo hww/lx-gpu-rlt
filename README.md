@@ -29,6 +29,4 @@ A small, programmable 2D raster engine for MSX-class machines. The CPU says "dra
 
 **Pre-alpha.** The behavioural C++ model validates the instruction set against 12 tests (fill, sprite copy, 8/1 bpp, affine, paging, pass-through, MMIO, ALU logic). RTL is being written against that model.
 
-Target validation: a demo frame — **320×200 @ 4 bpp, 240 tiles of 16×16 + 64 sprites of 16×16 with colour-key transparency** — rendered within a 60 fps budget at 18 MHz. This is the success criterion before handing the design to the Z80 BIOS and RTL integration.
-
 ## Repository layout

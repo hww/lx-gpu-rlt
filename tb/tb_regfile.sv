@@ -17,6 +17,7 @@ module tb_regfile;
         // write R0 = 0x123456
         wa = 5'd0; wdata = 24'h123456; we = 1;
         @(posedge clk);
+        @(negedge clk);          // inputs change away from the posedge (no race)
         we = 0;
 
         // read R0 (write-first: same cycle should see new value)
@@ -27,6 +28,7 @@ module tb_regfile;
         // write R31
         wa = 5'd31; wdata = 24'hABCDEF; we = 1;
         @(posedge clk);
+        @(negedge clk);          // inputs change away from the posedge (no race)
         we = 0;
         rb = 5'd31;
         #1;

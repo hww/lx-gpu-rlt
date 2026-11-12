@@ -63,3 +63,6 @@ verdiLog
 
 # UVM
 vc_hdrs.h
+
+build/
+
